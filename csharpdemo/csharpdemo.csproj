@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <StartupObject>csharpdemo.oop.TestAccount</StartupObject>
+    <StartupObject>csharpdemo.oop.TestStudent</StartupObject>
   </PropertyGroup>
 
 </Project>
