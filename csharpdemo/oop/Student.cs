@@ -12,6 +12,19 @@ namespace csharpdemo.oop
         private int feepaid;
         // class variables
         private static double taxrate = 12.5;
+
+        public string Fullname
+        {
+            get
+            {
+                return this.name;
+            }
+            set
+            {
+                this.name = value;
+            }
+        }
+
         public static double TaxRate
         {
             get
