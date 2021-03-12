@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace csharpdemo.oop
 {
-    class Circle
+    class MyCircle
     {
         // Automatically implemented properties 
         public int X { get; set; }
@@ -26,13 +26,13 @@ namespace csharpdemo.oop
     {
         static void Main(string[] args)
         {
-            Circle c = new Circle();
+            var c = new MyCircle();
             c.X = 10;
             c.Y = 20;
             // c.Radius = 40;
 
             // Object initializer 
-            Circle c2 = new Circle { X = 1, Y = 10, Radius = 10 };
+            var c2 = new MyCircle { X = 1, Y = 10, Radius = 10 };
             Console.WriteLine(c2.Area);
            
         }
