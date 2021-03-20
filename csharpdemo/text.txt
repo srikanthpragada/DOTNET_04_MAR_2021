@@ -1,0 +1,3 @@
+This is to test how to get unique words in a file.
+This is using SortedSet of COllection Classes.
+We need to use File class to read all lines from file.
