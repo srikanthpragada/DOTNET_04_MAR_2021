@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <StartupObject>csharpdemo.Library.DictDemo</StartupObject>
+    <StartupObject>csharpdemo.Linq.QueryExpressionsDemo</StartupObject>
   </PropertyGroup>
 
 </Project>

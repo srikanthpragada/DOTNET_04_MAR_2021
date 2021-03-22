@@ -8,5 +8,11 @@ namespace csharpdemo.Library
 {
     class TupleDemo
     {
+        static void Main(string[] args)
+        {
+            Tuple<string,int> t = Tuple.Create("Abc", 2);
+            Console.WriteLine(t.Item1);
+                        
+        }
     }
 }
