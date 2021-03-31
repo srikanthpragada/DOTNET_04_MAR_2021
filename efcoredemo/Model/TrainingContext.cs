@@ -10,14 +10,12 @@ namespace efcoredemo.Model
 {
     class TrainingContext : DbContext
     {
-        public DbSet<Course> Courses
-        {
-            get; set;
-        }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Topic> Topics { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            // options.LogTo(Console.WriteLine, LogLevel.Information);
+            options.LogTo(Console.WriteLine, LogLevel.Information);
             options.UseSqlServer(@"Data source=(localdb)\mssqllocaldb;Initial Catalog=training;Integrated Security=True");
         }
     }

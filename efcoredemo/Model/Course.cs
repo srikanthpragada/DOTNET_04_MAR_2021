@@ -23,5 +23,6 @@ namespace efcoredemo.Model
         {
             get; set;
         }
+        public int Fee { get; set; }
     }
 }
