@@ -8,15 +8,18 @@ using System.Threading.Tasks;
 
 namespace efcoredemo
 {
-    class ListTopics
+    class ListTopicsLazy
     {
         static void Main(string[] args)
         {
             var ctx = new TrainingContext();
 
-            // Eager loading 
-            foreach (var t in ctx.Topics.Include( t => t.Course))
+            // Lazy loading 
+            foreach (var t in ctx.Topics)
+            {
+                // Console.WriteLine(t.GetType().FullName);
                 Console.WriteLine($"{t.Course.Title} - {t.Title}");
+            }
         }
     }
 }

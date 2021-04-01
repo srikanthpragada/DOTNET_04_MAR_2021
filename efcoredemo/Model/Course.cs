@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace efcoredemo.Model
 {
     // Domain class or Entity class 
-    class Course
+    public class Course
     {
         public int Id
         {

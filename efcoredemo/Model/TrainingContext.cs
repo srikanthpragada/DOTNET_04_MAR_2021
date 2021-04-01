@@ -13,10 +13,14 @@ namespace efcoredemo.Model
         public DbSet<Course> Courses { get; set; }
         public DbSet<Topic> Topics { get; set; }
 
+        public DbSet<Book> Books { get; set; }
+        public DbSet<Chapter> Chapters { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.LogTo(Console.WriteLine, LogLevel.Information);
-            options.UseSqlServer(@"Data source=(localdb)\mssqllocaldb;Initial Catalog=training;Integrated Security=True");
+            options.UseLazyLoadingProxies();  // For Lazy loading 
+            options.UseSqlServer(@"Data source=(localdb)\mssqllocaldb;Initial Catalog=training;Integrated Security=True;MultipleActiveResultSets=True");
         }
     }
 }
