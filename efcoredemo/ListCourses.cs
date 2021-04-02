@@ -11,7 +11,7 @@ namespace efcoredemo
     {
         static void Main(string[] args)
         {
-            var ctx = new TrainingContext();
+            var ctx = new CatalogContext();
             //// Display all courses
             //foreach(var course in ctx.Courses)
             //{

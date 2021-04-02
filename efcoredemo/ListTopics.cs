@@ -12,7 +12,7 @@ namespace efcoredemo
     {
         static void Main(string[] args)
         {
-            var ctx = new TrainingContext();
+            var ctx = new CatalogContext();
 
             // Eager loading 
             foreach (var t in ctx.Topics.Include( t => t.Course))

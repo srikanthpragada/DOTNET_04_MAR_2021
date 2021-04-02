@@ -11,7 +11,7 @@ namespace efcoredemo
     {
         static void Main(string[] args)
         {
-            var ctx = new TrainingContext();
+            var ctx = new CatalogContext();
             var course = new Course { Title = "Python", Prereq = "Basic Programming" };
             ctx.Courses.Add(course);
             ctx.SaveChanges();

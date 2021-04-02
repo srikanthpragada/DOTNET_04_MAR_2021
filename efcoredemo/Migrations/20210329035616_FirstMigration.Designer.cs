@@ -8,7 +8,7 @@ using efcoredemo.Model;
 
 namespace efcoredemo.Migrations
 {
-    [DbContext(typeof(TrainingContext))]
+    [DbContext(typeof(CatalogContext))]
     [Migration("20210329035616_FirstMigration")]
     partial class FirstMigration
     {

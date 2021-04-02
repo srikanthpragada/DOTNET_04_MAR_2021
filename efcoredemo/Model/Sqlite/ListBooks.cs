@@ -1,24 +1,21 @@
 ﻿using efcoredemo.Model;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace efcoredemo
+namespace efcoredemo.Model.Sqlite
 {
-    class ListTopicsLazy
+    class ListBooks
     {
         static void Main(string[] args)
         {
             var ctx = new CatalogContext();
 
-            // Lazy loading 
-            foreach (var t in ctx.Topics)
+            foreach(var book in ctx.Books)
             {
-                // Console.WriteLine(t.GetType().FullName);
-                Console.WriteLine($"{t.Course.Title} - {t.Title}");
+                Console.WriteLine($"{book.Title} - {book.Author} - {book.Price}");
             }
         }
     }

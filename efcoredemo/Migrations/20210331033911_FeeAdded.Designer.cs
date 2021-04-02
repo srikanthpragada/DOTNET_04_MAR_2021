@@ -9,7 +9,7 @@ using efcoredemo.Model;
 
 namespace efcoredemo.Migrations
 {
-    [DbContext(typeof(TrainingContext))]
+    [DbContext(typeof(CatalogContext))]
     [Migration("20210331033911_FeeAdded")]
     partial class FeeAdded
     {

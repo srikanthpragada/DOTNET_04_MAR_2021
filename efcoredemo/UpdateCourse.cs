@@ -11,7 +11,7 @@ namespace efcoredemo
     {
         static void Main(string[] args)
         {
-            var ctx = new TrainingContext();
+            var ctx = new CatalogContext();
 
             var course1 = new Course { Title = "new course", Prereq = "Nothing" };
             Console.WriteLine(ctx.Entry(course1).State); 

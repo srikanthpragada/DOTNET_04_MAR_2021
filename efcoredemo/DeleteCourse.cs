@@ -11,7 +11,7 @@ namespace efcoredemo
     {
         static void Main(string[] args)
         {
-            var ctx = new TrainingContext();
+            var ctx = new CatalogContext();
 
             var course = ctx.Courses.Find(2); // Find entity by Primary key 2 
 
