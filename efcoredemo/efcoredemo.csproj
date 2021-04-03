@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <StartupObject>efcoredemo.Model.Sqlite.ListBooks</StartupObject>
+    <StartupObject>efcoredemo.Model.Sqlite.ListPeople</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
