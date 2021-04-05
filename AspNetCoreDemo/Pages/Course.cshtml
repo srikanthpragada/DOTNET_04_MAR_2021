@@ -1,0 +1,21 @@
+﻿@page 
+@model AspNetCoreDemo.Pages.CourseModel
+@{
+    // Razor block 
+    Layout = null; // No layout
+    var now = DateTime.Now.ToLongDateString();
+}
+
+<h1 style="color:blue">Course Details</h1>
+<h2>@Model.Title</h2>
+<h3>@Model.Fee</h3>
+<h3>Topics</h3>
+<ul>
+    @foreach (var c in Model.Topics)
+    {
+           <li>@c</li>
+    }
+</ul>
+
+<hr/>
+<h4>Today is : @now  </h4>
