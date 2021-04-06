@@ -1,0 +1,14 @@
+﻿@page
+@model AspNetCoreDemo.Pages.WishModel
+@{
+}
+
+<h2>Wishing</h2>
+
+<form method="post">
+    Name : <input type="text" name="user" required />
+    <p/>
+    <input type="submit" value="Wish" />
+</form>
+
+<h2>@Model.Message</h2>

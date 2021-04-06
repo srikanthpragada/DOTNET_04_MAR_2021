@@ -1,0 +1,17 @@
+﻿@page
+@model AspNetCoreDemo.Pages.AreaModel
+@{
+}
+
+<h1>Area Calculation</h1>
+<form method="post">
+    Length : <input type="number" name="Length" required />
+    Width : <input type="number" name="Width" required />
+    <p />
+    <input type="submit" value="Calculate" />
+</form>
+
+@if (Model.Area > 0)
+{
+    <h2>Area : @Model.Area</h2>
+}
