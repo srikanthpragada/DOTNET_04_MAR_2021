@@ -1,0 +1,22 @@
+﻿@page
+@model AspNetCoreDemo.Pages.InterestModel
+@{
+}
+
+<h1>Interest Calculation</h1>
+<form method="post">
+    Deposit Amount <br />
+    <input type="number" name="Amount" asp-for="Amount" />
+    <span asp-validation-for="Amount"></span>
+    <p></p>
+    Deposit Period (Days) <br />
+    <input type="number" name="Period" asp-for="Period" />
+    <span asp-validation-for="Period"></span>
+    <p></p>
+    <input type="submit" value="Calculate" />
+</form>
+
+@if (Model.Interest > 0)
+{
+    <h3>Interest = @Model.Interest</h3>
+}
