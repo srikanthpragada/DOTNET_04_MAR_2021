@@ -1,0 +1,29 @@
+﻿@page
+@model AspNetCoreDemo.Pages.RegisterModel
+@{
+}
+
+<h1>Registration</h1>
+<form method="post">
+    Username <br />
+    <input asp-for="Username" /> <span asp-validation-for="Username"></span>
+    <p></p>
+
+    Password <br />
+    <input asp-for="Password" /> <span asp-validation-for="Password"></span>
+    <p></p>
+
+    Confirm Password <br />
+    <input asp-for="ConfirmPassword" /> <span asp-validation-for="ConfirmPassword"></span>
+    <p></p>
+
+
+    Email Address <br />
+    <input asp-for="EmailAddress" /> <span asp-validation-for="EmailAddress"></span>
+    <p></p>
+    <input type="submit" value="Register" />
+</form>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
