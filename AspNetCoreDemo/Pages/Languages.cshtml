@@ -1,0 +1,15 @@
+﻿@page
+@model AspNetCoreDemo.Pages.LanguagesModel
+@{
+}
+
+<h1>Languages</h1>
+
+<form>
+    Language <input type="text" name="Language" />
+    <input type="submit" value="Add" />
+</form>
+
+<h2>Known Languages</h2>
+
+@Model.Languages
