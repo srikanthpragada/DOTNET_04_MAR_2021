@@ -11,20 +11,18 @@ namespace AspNetCoreDemo.Pages
     public class LanguagesModel : PageModel
     {
         public string Languages { get; set; }
-        public void OnGet(String name)
+        public void OnGet(String lang)
         {
             Languages = HttpContext.Session.GetString("languages");
-            if (name != null)
+            if (lang != null)
             {
                 if (Languages != null)
-                    Languages += "," + name;
+                    Languages += "," + lang;  // Append to existing langs
                 else
-                    Languages = name;
+                    Languages = lang;   // First lang
 
                 HttpContext.Session.SetString("languages", Languages);
             }
-
-           
         }
     }
 }

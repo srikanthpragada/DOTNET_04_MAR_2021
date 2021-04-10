@@ -24,9 +24,9 @@ namespace AspNetCoreDemo
         {
             services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromSeconds(10);
-                options.Cookie.HttpOnly = true;
-                options.Cookie.IsEssential = true;
+                //options.IdleTimeout = TimeSpan.FromSeconds(10);
+                //options.Cookie.HttpOnly = true;
+                //options.Cookie.IsEssential = true;
             }
             );
             services.AddRazorPages();
@@ -44,11 +44,11 @@ namespace AspNetCoreDemo
                 app.UseExceptionHandler("/Error");
             }
 
-            app.UseSession();  // using Sessions
-
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseSession();  // using Sessions
 
             app.UseAuthorization();
 

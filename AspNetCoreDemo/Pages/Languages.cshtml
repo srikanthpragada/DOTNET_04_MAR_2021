@@ -6,10 +6,18 @@
 <h1>Languages</h1>
 
 <form>
-    Language <input type="text" name="Language" />
+    Language <input type="text" name="lang" />
     <input type="submit" value="Add" />
 </form>
 
-<h2>Known Languages</h2>
+@if (Model.Languages != null)
+{
+    <h2>Known Languages</h2>
 
-@Model.Languages
+    <ul>
+        @foreach (var lang in Model.Languages.Split(','))
+        {
+            <li>@lang</li>
+        }
+    </ul>
+}
