@@ -18,6 +18,7 @@ namespace AspNetCoreDemo.Pages
 
         public UploadPhotoModel(IWebHostEnvironment Env)  // DI 
         {
+            Console.WriteLine(Env.GetType().Name);
             this.Env = Env;
         }
         public void OnPost()
