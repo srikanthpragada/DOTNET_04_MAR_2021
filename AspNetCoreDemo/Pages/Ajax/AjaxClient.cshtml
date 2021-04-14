@@ -1,0 +1,46 @@
+﻿@page
+@{
+    Layout = null;
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script>
+    function getDateTime() {
+        // Make AJAX call 
+        // $.get(url,data,callback)
+
+        $.get("/Ajax/DateTime", null,
+            function (result) {
+                $("#datetime").text(result);
+            }
+        );
+    }
+
+    function getContacts() {
+        $("#contacts").html("");
+        var output = ""
+        $.get("/Ajax/Contacts", null,
+            function (contacts) {
+                // console.log(contacts)
+                for (i = 0; i < contacts.length; i++)
+                    output += "<li>" + contacts[i].name + "," + contacts[i].email + "</li>";
+
+                //contacts.forEach(
+                //    function (c) {
+                //        output += "<li>" + c.name + "," + c.email + "</li>";
+                //    }
+                //)
+                $("#contacts").html(output);
+            }
+        );
+    }
+</script>
+
+<button onclick="getDateTime()">Get Date Time</button>
+<h1 id="datetime"></h1>
+<hr/>
+<button onclick="getContacts()">Get Contacts</button>
+<ul id="contacts">
+
+</ul>
