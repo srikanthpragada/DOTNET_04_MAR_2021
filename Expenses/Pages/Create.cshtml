@@ -1,0 +1,49 @@
+﻿@page
+@model Expenses.Pages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Expenditure</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Expenditure.Title" class="control-label"></label>
+                <input asp-for="Expenditure.Title" class="form-control" />
+                <span asp-validation-for="Expenditure.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Expenditure.Amount" class="control-label"></label>
+                <input asp-for="Expenditure.Amount" class="form-control" />
+                <span asp-validation-for="Expenditure.Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Expenditure.SpentOn" class="control-label"></label>
+                <input asp-for="Expenditure.SpentOn" class="form-control" />
+                <span asp-validation-for="Expenditure.SpentOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Expenditure.Category" class="control-label"></label>
+                <input asp-for="Expenditure.Category" class="form-control" />
+                <span asp-validation-for="Expenditure.Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
