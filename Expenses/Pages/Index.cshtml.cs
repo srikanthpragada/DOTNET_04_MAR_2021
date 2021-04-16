@@ -27,7 +27,11 @@ namespace Expenses.Pages
 
         public void OnGet()
         {
-            Expenses = _context.Expenses.ToList();
+            Expenses = _context.Expenses
+                               .OrderByDescending(e => e.Id)
+                               .Take(10)
+                               .ToList();
+
         }
     }
 }

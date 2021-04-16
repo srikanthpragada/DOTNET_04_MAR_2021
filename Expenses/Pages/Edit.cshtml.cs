@@ -29,7 +29,7 @@ namespace Expenses.Pages
                 return NotFound();
             }
 
-            Expenditure = await _context.Expenses.FirstOrDefaultAsync(m => m.Id == id);
+            Expenditure = await _context.Expenses.FirstOrDefaultAsync(e => e.Id == id);
 
             if (Expenditure == null)
             {

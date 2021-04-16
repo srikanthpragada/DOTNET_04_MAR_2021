@@ -18,41 +18,30 @@ namespace Expenses.Pages
             _context = context;
         }
 
-        [BindProperty]
-        public Expenditure Expenditure { get; set; }
+        public string Message { get; private set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
             {
-                return NotFound();
+                Message = "Expenditure Not Found!";
+                return Page();
             }
 
-            Expenditure = await _context.Expenses.FirstOrDefaultAsync(m => m.Id == id);
+            var expenditure = await _context.Expenses.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Expenditure == null)
+            if (expenditure == null)
             {
-                return NotFound();
-            }
-            return Page();
-        }
-
-        public async Task<IActionResult> OnPostAsync(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
+                Message = "Expenditure Not Found!";
+                return Page();
             }
 
-            Expenditure = await _context.Expenses.FindAsync(id);
-
-            if (Expenditure != null)
-            {
-                _context.Expenses.Remove(Expenditure);
-                await _context.SaveChangesAsync();
-            }
+            _context.Expenses.Remove(expenditure);
+            await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }
+
+       
     }
 }

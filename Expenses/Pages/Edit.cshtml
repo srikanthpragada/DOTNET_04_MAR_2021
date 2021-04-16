@@ -6,13 +6,9 @@
 }
 
 <h1>Edit</h1>
-
-<h4>Expenditure</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Expenditure.Id" />
             <div class="form-group">
                 <label asp-for="Expenditure.Title" class="control-label"></label>
@@ -31,8 +27,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Expenditure.Category" class="control-label"></label>
-                <input asp-for="Expenditure.Category" class="form-control" />
-                <span asp-validation-for="Expenditure.Category" class="text-danger"></span>
+                <select asp-for="Expenditure.Category" class="form-control">
+                    <option value="1">Education</option>
+                    <option value="2">Entertainment</option>
+                    <option value="3">Food</option>
+                    <option value="4">Others</option>
+                </select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
@@ -41,9 +41,6 @@
     </div>
 </div>
 
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
