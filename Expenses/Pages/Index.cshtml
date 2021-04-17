@@ -7,44 +7,4 @@
 
 <h1>Recent Expenses</h1> 
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Title
-            </th>
-            <th>
-                Amount
-            </th>
-            <th>
-                SpentOn
-            </th>
-            <th>
-                Category
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Expenses) {
-        <tr>
-            <td>
-                @item.Title
-            </td>
-            <td>
-                @item.Amount
-            </td>
-            <td>
-                @item.SpentOn
-            </td>
-            <td>
-                @item.Category
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a onclick="return confirm('Do you want to delete?')" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<partial name="_Expenses" model="Model.Expenses" />

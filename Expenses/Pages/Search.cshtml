@@ -1,0 +1,25 @@
+﻿@page
+@model Expenses.Pages.SearchModel
+
+@{
+    ViewData["Title"] = "Search Expenses";
+}
+
+<h1>Search Expenses</h1> 
+
+<form method="post">
+    Title : <input type="text" name="title" required/>
+    <input type="submit" value="Search" />
+</form>
+<p></p>
+@if (Model.Expenses != null)
+{
+    if (Model.Expenses.Count > 0)
+    {
+        <partial name="_Expenses" model="Model.Expenses" />
+    }
+    else
+    {
+        <h4> Sorry! No Expenses Found!</h4>
+    }
+}
