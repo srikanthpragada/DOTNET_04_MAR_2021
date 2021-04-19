@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Expenses.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Expenses.Pages
 {
+    [Authorize]
     public class CreateModel : PageModel
     {
         private readonly Expenses.Models.MyDbContext _context;

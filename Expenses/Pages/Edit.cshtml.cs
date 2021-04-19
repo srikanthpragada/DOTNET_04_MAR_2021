@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Expenses.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Expenses.Pages
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private readonly Expenses.Models.MyDbContext _context;

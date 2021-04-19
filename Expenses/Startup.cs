@@ -26,17 +26,17 @@ namespace Expenses
         {
             services.AddRazorPages(); 
             services.AddDbContext<MyDbContext>();
-            
-           // services.AddDefaultIdentity<IdentityUser>(options =>
-           // {
-           //     options.SignIn.RequireConfirmedAccount = false;
-           //     options.Password.RequireDigit = false;
-           //     options.Password.RequiredLength = 1;
-           //     options.Password.RequireUppercase = false;
-           //     options.Password.RequireNonAlphanumeric = false;
-           // }
-           //)
-           //.AddEntityFrameworkStores<MyDbContext>();
+
+            services.AddDefaultIdentity<IdentityUser>(options =>
+               {
+                options.SignIn.RequireConfirmedAccount = false;
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 1;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+               }
+           )
+           .AddEntityFrameworkStores<MyDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +52,6 @@ namespace Expenses
             }
 
             app.UseStaticFiles();
-
             app.UseRouting();
 
             app.UseAuthentication();
