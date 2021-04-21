@@ -18,6 +18,12 @@ namespace Courses.Models
             this.courses.Add(course);
         }
 
+        public void DeleteCourse(int id)
+        {
+            var course = GetCourse(id);
+            this.courses.Remove(course);
+        }
+
         public IEnumerable<Course> GetAllCourses()
         {
             return courses; 

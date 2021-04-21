@@ -8,7 +8,9 @@ namespace Courses.Models
     public interface ICourseRepository
     {
         IEnumerable<Course> GetAllCourses();
-        Course GetCourse(int Id);
+        Course GetCourse(int id);
         void AddCourse(Course course);
+
+        void DeleteCourse(int id);
     }
 }
