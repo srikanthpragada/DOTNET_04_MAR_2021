@@ -25,7 +25,9 @@ namespace Courses
         {
             services.AddControllersWithViews();
             // AddTransient(), AddScoped()
-            services.AddSingleton<ICourseRepository, MemoryRepository>();
+            services.AddDbContext<CoursesDbContext>();
+            // services.AddSingleton<ICourseRepository, MemoryRepository>();
+            services.AddScoped<ICourseRepository, SqlServerRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

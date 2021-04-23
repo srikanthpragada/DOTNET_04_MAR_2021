@@ -10,7 +10,6 @@ namespace Courses.Models
         IEnumerable<Course> GetAllCourses();
         Course GetCourse(int id);
         void AddCourse(Course course);
-
         void DeleteCourse(int id);
     }
 }

@@ -53,9 +53,6 @@ namespace Courses.Controllers
         [HttpPost]
         public IActionResult Add(Course course)
         {
-            // Get max id and add 1 to that 
-            var id = Repository.GetAllCourses().Max(c => c.Id) + 1;
-            course.Id = id; 
             Repository.AddCourse(course);
             return RedirectToAction("Index");
         }
