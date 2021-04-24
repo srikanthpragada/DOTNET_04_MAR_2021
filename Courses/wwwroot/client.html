@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script>
+        function getAllCourses() {
+            $.get("/api/courses", null,
+                function (courses) {
+                    output = "";
+                    courses.forEach(function (c) {
+                        output += "<li>" + c.title + "</li>";
+                    });
+                    $("#courses").html(output);
+                }
+            );
+        }
+    </script>
+</head>
+<body>
+<h1>Courses Client</h1>
+<button onclick="getAllCourses()">Get All Courses</button>
+
+<ul  id="courses">
+
+</ul>
+
+</body>
+</html>
