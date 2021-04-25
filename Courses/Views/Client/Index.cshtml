@@ -1,0 +1,16 @@
+﻿@model List<Courses.Models.Course>
+
+
+<h1>List of Courses</h1>
+
+@if (Model != null)
+{
+    @foreach (var c in Model)
+    {
+        <h4>@c.Title</h4>
+    }
+}
+else
+{
+    <h3>@ViewBag.Message</h3>
+}

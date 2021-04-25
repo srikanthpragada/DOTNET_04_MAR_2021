@@ -46,11 +46,7 @@ namespace Courses.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCourse(int id, Course course)
         {
-            if (id != course.Id)
-            {
-                return BadRequest();
-            }
-
+            course.Id = id; 
             _context.Entry(course).State = EntityState.Modified;
 
             try

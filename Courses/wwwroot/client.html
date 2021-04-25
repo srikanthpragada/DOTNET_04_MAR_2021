@@ -5,26 +5,83 @@
     <title></title>
     <script src="lib/jquery/dist/jquery.js"></script>
     <script>
+        var URL = "http://localhost:6420/api/courses"
+
         function getAllCourses() {
-            $.get("/api/courses", null,
+            $.get(URL,
+                null,  
                 function (courses) {
                     output = "";
                     courses.forEach(function (c) {
-                        output += "<li>" + c.title + "</li>";
+                        output += "<li>" + c.id + " - "  + c.title + "</li>";
                     });
                     $("#courses").html(output);
+                }
+            );
+        }
+
+        function deleteCourse() {
+            var url = URL + "/" + $("#Id").val();
+            $.ajax({
+                "url": url,
+                "type": "delete",
+                "success": function () {
+                    alert("Deleted Successfully!")
+                },
+                "error": function () {
+                    alert("Deletion Failed!")
+                }
+            });
+        }
+
+        function addCourse() {
+            // Create JavaScript object 
+            var data = {
+                title: $("#title").val(),
+                duration: $("#duration").val(),
+                fee: $("#fee").val()
+            };
+
+            $.ajax(
+                {
+                    "url": URL,
+                    "data": JSON.stringify(data),  // JS to JSON
+                    "type": "post",
+                    "contentType": "application/json",
+                    "success": function (course) {
+                        console.log(course)
+                        alert("Added course successfully!")
+                    },
+                    "error": function () {
+                        alert("Sorry! Could not add course due to error!")
+                    }
                 }
             );
         }
     </script>
 </head>
 <body>
-<h1>Courses Client</h1>
-<button onclick="getAllCourses()">Get All Courses</button>
+    <h1>Courses Client</h1>
+    <button onclick="getAllCourses()">Get All Courses</button>
 
-<ul  id="courses">
+    <ul id="courses">
+    </ul>
 
-</ul>
+    <hr />
+
+    <h2>Add Course</h2>
+    Title : <input type="text" id="title" />
+    Duration : <input type="number" id="duration" />
+    Fee : <input type="number" id="fee" />
+    <p></p>
+    <button onclick="addCourse()">Add Course</button>
+
+    <hr />
+
+    <h2>Delete Course</h2>
+    Id : <input type="text" id="Id" />
+    <p></p>
+    <button onclick="deleteCourse()">Delete Course</button>
 
 </body>
 </html>
